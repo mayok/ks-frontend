@@ -8,20 +8,17 @@ module.exports = {
     './src/index.jsx'
   ],
   module: {
-    loaders: [
+    rules: [
       {
-        test: /\.js[x]?$/,
+        test: /\.jsx?$/,
         exclude: /node_modules/,
-        loaders: [
-          'react-hot',
-          'babel'
-        ],
+        loader: 'babel-loader',
         include: path.join(__dirname, 'src')
       },
     ]
   },
   resolve: {
-    extension: ['', '.js', '.jsx']
+    extensions: ['.js', '.jsx']
   },
   output: {
     path: __dirname + '/dist',
